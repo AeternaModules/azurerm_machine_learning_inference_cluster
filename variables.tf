@@ -26,7 +26,7 @@ EOT
     location                      = string
     machine_learning_workspace_id = string
     name                          = string
-    cluster_purpose               = optional(string, "FastProd")
+    cluster_purpose               = optional(string) # Default: "FastProd"
     description                   = optional(string)
     tags                          = optional(map(string))
     identity = optional(object({
@@ -34,10 +34,10 @@ EOT
       type         = string
     }))
     ssl = optional(object({
-      cert                      = optional(string, "")
-      cname                     = optional(string, "")
-      key                       = optional(string, "")
-      leaf_domain_label         = optional(string, "")
+      cert                      = optional(string) # Default: ""
+      cname                     = optional(string) # Default: ""
+      key                       = optional(string) # Default: ""
+      leaf_domain_label         = optional(string) # Default: ""
       overwrite_existing_domain = optional(bool)
     }))
   }))
