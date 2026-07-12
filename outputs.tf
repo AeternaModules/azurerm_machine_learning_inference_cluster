@@ -1,3 +1,7 @@
+output "machine_learning_inference_clusters_id" {
+  description = "Map of id values across all machine_learning_inference_clusters, keyed the same as var.machine_learning_inference_clusters"
+  value       = { for k, v in azurerm_machine_learning_inference_cluster.machine_learning_inference_clusters : k => v.id }
+}
 output "machine_learning_inference_clusters_cluster_purpose" {
   description = "Map of cluster_purpose values across all machine_learning_inference_clusters, keyed the same as var.machine_learning_inference_clusters"
   value       = { for k, v in azurerm_machine_learning_inference_cluster.machine_learning_inference_clusters : k => v.cluster_purpose }
